@@ -1,1 +1,10 @@
-<p>testing-ee-jest-basics works!</p>
+<h1>Testbed: Jest Basics</h1>
+
+<ul>
+  <li><strong>Installation 1:</strong> npm i -D &commat;types/jest jest jest-environment-jsdom</li>
+  <li><strong>Installation 2:</strong> "karma" durch "jest" in angular.json ersetzen: `&commat;angular-devkit/build-angular:jest`</li>
+  <li><strong>Installation 3:</strong> Karma und Jasmine deinstallieren: npm uninstall &commat;types/jasmine jasmine-core karma karma-chrome-launcher karma-coverage karma-jasmine karma-jasmine-html-reporter</li>
+</ul>
+
+<p>Im Anschluss funktioniert Jest größtenteils wie Karma, nur das Jest deutlich schneller ist, da es Tests parallel ausführen kann und kein echten Webbrowser benötigt.</p>
+<p>Auf der anderen Seite unterstützt Jest nicht alle nativen Browser Funktionen/APIs, wie ResizeObserver, LocalStorage usw.</p>

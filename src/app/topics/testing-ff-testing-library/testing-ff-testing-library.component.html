@@ -1,1 +1,25 @@
-<p>testing-ff-testing-library works!</p>
+<h1>Testbed: Testing Library</h1>
+
+<ul>
+  <li><strong>Installation:</strong> npm i -D &commat;testing-library/angular &commat;testing-library/jest-dom &commat;testing-library/user-event</li>
+</ul>
+
+<p>Mit Hilfe der Test Library wird das Template/UI Testing einfacher und TestBed abstrahiert.</p>
+<p>Mit der Companion Library UserEvent werden echte Nutzer-Events simuliert.</p>
+<p>Zusätzlich gibt es weitere Jest Matcher (&commat;testing-library/jest-dom) die das Testen noch leichter machen. Leider funktioniert die Einrichtung unter Angular 16/17 noch nicht.</p>
+
+<hr>
+
+<section class="test-area">
+  <button (click)="testResult = 'Button geklickt'">Ein Button</button> | <a href="https://finatix.de" target="_blank">Ein Link</a> | <span>Ein Span</span>
+
+  <nav>
+    Eine Navigation
+    <ul>
+      <li>Erstes List Element der Navigation</li>
+      <li>Zweites List Element der Navigation</li>
+    </ul>
+  </nav>
+
+  <pre data-testid="result">{{ testResult }}</pre>
+</section>

@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { TestingCcTestbedDirectivesAndPipesComponent } from './testing-cc-testbed-directives-and-pipes.component';
+import {TestingCcTestbedDirectivesAndPipesComponent} from './testing-cc-testbed-directives-and-pipes.component';
 
 describe('TestingCcTestbedDirectivesAndPipesComponent', () => {
   let component: TestingCcTestbedDirectivesAndPipesComponent;
@@ -11,7 +11,7 @@ describe('TestingCcTestbedDirectivesAndPipesComponent', () => {
       imports: [TestingCcTestbedDirectivesAndPipesComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(TestingCcTestbedDirectivesAndPipesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -20,4 +20,6 @@ describe('TestingCcTestbedDirectivesAndPipesComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  // Nothing to see here
 });

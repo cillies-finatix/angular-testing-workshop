@@ -1,1 +1,19 @@
-<p>testing-bb-testbed-debugelement works!</p>
+<h1>Testbed: DebugElement</h1>
+
+<p>DOM-Manipulationen und Auslösen von Events, wie "click" usw.</p>
+
+<ul>
+  <li><strong>Host</strong>: Mit Host ist immer die Component gemeint, die gerade getestet wird bzw. in der Component Klasse selbst das Element im DOM, welches von Angular eingefügt wird.</li>
+  <li><strong>classes</strong>: CSS Klassen des "Host"</li>
+  <li><strong>attributes</strong>: HTML Attribute des Host (data- oder aria-Attribute uvm.)</li>
+  <li><strong>triggerEventHandler</strong>: Löst Event-Handler von Angular aus. Entweder von bestimmten Elementen (die mit query gesucht wurden) oder auf das Host Element.</li>
+  <li><strong>query</strong>: Kann Elemente im Template der Component suchen. Dafür braucht es die Hilfsklasse `By.css('... css selector ...')`</li>
+  <li><strong>nativeElement</strong>: Zugriff auf das echte DOM Element. Hierauf können auch native Events aufgerufen werden (u. a. `click()`), was sich aber schlechter mocken lässt.</li>
+</ul>
+
+<hr>
+
+<section class="test-area">
+  <button (click)="onButtonClick($event)">Ein Button der was macht</button>
+  <pre>{{ lastClickTagName }}</pre>
+</section>

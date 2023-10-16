@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
 @Component({
   selector: 'app-testing-ff-testing-library',
@@ -10,5 +10,5 @@ import { CommonModule } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TestingFfTestingLibraryComponent {
-
+  testResult: string = '';
 }

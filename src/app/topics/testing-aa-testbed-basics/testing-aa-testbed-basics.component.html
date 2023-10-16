@@ -1,1 +1,16 @@
-<p>testing-aa-testbed-basics works!</p>
+<h1>Testbed: Basics</h1>
+
+<ul>
+  <li><strong>TestBed</strong>: Testumgebung für Angular Module und Components. Hiermit werden Components erstellt.</li>
+  <li><strong>Fixture</strong>: Testwerkzeug für das DebugElement und auslösen von Angular's ChangeDetection</li>
+  <li><strong>DebugElement</strong>: für DOM-Manipulationen und Auslösen von Events, wie "click" usw.</li>
+  <li><strong>Component Instance</strong>: Die Instanz einer erstellten Komponente mit TestBed. Mit der Instanz könnnen die Public Funktionen der Komponente aufgerufen und getestet werden.</li>
+</ul>
+
+<hr>
+
+<section class="test-area">
+  <p>Test mit Primitive Binding "{{ myValue }}"</p>
+  <p>Test mit Signal Binding "{{ mySignal() }}"</p>
+  <p>Test mit RxJS Binding "{{ myValue$ | async }}"</p>
+</section>
