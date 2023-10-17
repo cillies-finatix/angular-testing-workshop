@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, signal} from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule} from '@angular/common';
 import {RouterLink} from "@angular/router";
 
 @Component({
@@ -7,7 +7,6 @@ import {RouterLink} from "@angular/router";
   standalone: true,
   imports: [CommonModule, RouterLink],
   templateUrl: './hello.component.html',
-  styleUrls: ['./hello.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HelloComponent {

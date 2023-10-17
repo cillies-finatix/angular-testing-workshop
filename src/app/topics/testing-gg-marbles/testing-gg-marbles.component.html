@@ -1,1 +1,16 @@
-<p>testing-gg-marbles works!</p>
+<h1>Testbed: RxJS Marble Testing</h1>
+
+<p>Vereinfacht Testing von Observables, Subjects und NgRx-Effects deutlich. Zu beachten ist lediglich, dass der Stream sich beim Subscribe wiederholen / replayen sollte. Hierbei kann ein Replay- oder BehaviourSubject verwendet werden.</p>
+
+<hr>
+
+<section class="test-area">
+  <ul>
+    <li>myDataStream$: {{ myDataStream$ | async }}</li>
+    <li>eventStream$$: {{ eventStream$ | async }} </li>
+    <li>myValueStream$: {{ myValueStream$ | async }}</li>
+    <li>myRequest$: {{ myRequest$ | async }}</li>
+  </ul>
+
+  <button (click)="updateEventStream()">update Event Stream</button>
+</section>
