@@ -1,1 +1,16 @@
-<p>testing-hh-routing works!</p>
+<h1>Testbed: Routing</h1>
+
+<p>
+  Routing zu testen ist nicht immer ganz so einfach. Idealerweise testet man nicht nur die Aufrufe auf Router.navigate, sondern mit dem Location.path() die tatsächlich navigierte Route.
+</p>
+<p>Hierzu muss das RouterTestingModule aber korrekt konfiguriert werden und alle Route enthalten, die auch zu testen sind. Mit "path: '**'" kann man aber auch nur 1 Route für alle angeben, die im Testfall immer funktioniert.</p>
+
+<hr>
+
+<section class="test-area">
+  <ul>
+    <li><a data-testid="link-router-link" [routerLink]="['/', 'link-to-a-page']">Link to a page using routerLink</a></li>
+    <li><a data-testid="link-router-navigate" (click)="onClick($event)" style="text-decoration: underline;">Link to a page using router.navigate</a></li>
+    <li><a data-testid="link-router-dynamic" [routerLink]="dynamicRoute$ | async" [queryParams]="{ dynamic: true }" style="text-decoration: underline;">Link to a page using async and routerLink</a></li>
+  </ul>
+</section>

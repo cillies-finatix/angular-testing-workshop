@@ -32,6 +32,14 @@ describe('TestingGgMarblesComponent', () => {
       })
     .compileComponents();
 
+    /* Funktioniert nicht so leicht mit `render`,
+       da irgendwie weiterhin das normale Http Module verwendet wird, nehme ich an.
+    const result = await render(TestingGgMarblesComponent, {
+      imports: [HttpClientTestingModule]
+    });
+    fixture = result.fixture;
+    /**/
+
     fixture = TestBed.createComponent(TestingGgMarblesComponent);
     httpController = TestBed.inject(HttpTestingController);
     component = fixture.componentInstance;
@@ -69,7 +77,6 @@ describe('TestingGgMarblesComponent', () => {
 
       marbles.run(({expectObservable, flush}) => {
         const expected = { a: 1 };
-
 
         // Egal wann wir die Funktion aufrufen, der TestScheduler ist an der Stelle noch gar nicht aktiv.
         component.updateEventStream();
