@@ -1,6 +1,7 @@
-import { Routes } from '@angular/router';
+import {Routes} from '@angular/router';
 
 export const routes: Routes = [
+  {path:'todo-app', loadComponent: () => import('./todo-app/components/todo-container/todo-container.component').then(m => m.TodoContainerComponent)},
   {path:'testing-aa-testbed-basics', loadComponent: () => import('./topics/testing-aa-testbed-basics/testing-aa-testbed-basics.component').then(m => m.TestingAaTestbedBasicsComponent) },
   {path:'testing-bb-testbed-debugelement', loadComponent: () => import('./topics/testing-bb-testbed-debugelement/testing-bb-testbed-debugelement.component').then(m => m.TestingBbTestbedDebugelementComponent) },
   {path:'testing-cc-testbed-directives-and-pipes', loadComponent: () => import('./topics/testing-cc-testbed-directives-and-pipes/testing-cc-testbed-directives-and-pipes.component').then(m => m.TestingCcTestbedDirectivesAndPipesComponent) },

@@ -1,0 +1,11 @@
+<header>
+  <app-header (editModeChange)="changeEditMode($event)"/>
+</header>
+<main>
+  <section>
+    <app-todo-input (todo)="addTodo($event)" [disabled]="disabled()"/>
+  </section>
+  <section>
+    <app-todo-list (done)="onDone($event)" (remove)="onRemove($event)" [disabled]="disabled()" [todos]="todos()"></app-todo-list>
+  </section>
+</main>

@@ -1,0 +1,5 @@
+<ul>
+  <li *ngFor="let todo of todos">
+    <app-todo-item (change)="onChange(todo.id, $event)" (remove)="onRemove(todo.id)" [disabled]="disabled" [id]="todo.id" [done]="todo.done">{{ todo.label }}</app-todo-item>
+  </li>
+</ul>

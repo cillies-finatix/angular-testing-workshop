@@ -1,0 +1,3 @@
+<app-label>Add Todo Here</app-label>
+<app-input [disabled]="disabled" placeholder="Add Todo Here" #ref></app-input>
+<app-button [disabled]="disabled" (click)="addTodo(ref)">Submit</app-button>
