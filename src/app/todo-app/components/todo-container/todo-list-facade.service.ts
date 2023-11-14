@@ -1,5 +1,5 @@
 import {Injectable, Signal} from '@angular/core';
-import {BehaviorSubject, map} from "rxjs";
+import {BehaviorSubject, map, Observable} from "rxjs";
 import {Todo} from "../todo-model/todo";
 import {toSignal} from "@angular/core/rxjs-interop";
 
@@ -17,13 +17,15 @@ export class TodoListFacadeService {
     editable: false,
   });
 
-  readonly todos: Signal<Todo[]> = toSignal(this.#state.pipe(
+  readonly todos$: Observable<Todo[]> = this.#state.pipe(
     map(({todos}) => todos),
-  ), { initialValue: [] });
+  );
+  readonly todos: Signal<Todo[]> = toSignal(this.todos$, { initialValue: [] });
 
-  readonly disabled: Signal<boolean> = toSignal(this.#state.pipe(
+  readonly disabled$: Observable<boolean> = this.#state.pipe(
     map(({editable}) => !editable),
-  ), { initialValue: false });
+  );
+  readonly disabled: Signal<boolean> = toSignal(this.disabled$, { initialValue: false });
 
   setActive(isActive: boolean) {
     console.log(this.constructor.name, 'setActive called', isActive);
@@ -51,7 +53,7 @@ export class TodoListFacadeService {
   }
 
   removeTodo(id: string) {
-
+    this.$removeTodo(id);
   }
 
   private $addTodo(todo: Todo): TodoListState {
@@ -60,6 +62,14 @@ export class TodoListFacadeService {
       todos: [...todos, todo],
     });
   }
+
+  private $removeTodo(todoId: Todo["id"]): TodoListState {
+    const todos = this.todos().filter(t => t.id !== todoId);
+    return this.$patch({
+      todos: [...todos],
+    });
+  }
+
   private $patch(state: Partial<TodoListState>): TodoListState {
     const newState: TodoListState = {
       ...this.#state.getValue(),
