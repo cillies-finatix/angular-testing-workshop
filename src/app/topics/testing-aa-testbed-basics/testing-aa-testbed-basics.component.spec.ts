@@ -22,6 +22,7 @@ describe('TestingAaTestbedBasicsComponent', () => {
     /**/
 
     fixture = TestBed.createComponent(TestingAaTestbedBasicsComponent);
+    fixture.debugElement.providerTokens
     component = fixture.componentInstance;
   });
 
