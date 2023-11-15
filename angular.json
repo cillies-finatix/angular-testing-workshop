@@ -78,8 +78,18 @@
             "buildTarget": "angular-testing-workshop:build"
           }
         },
-        "test": {
+        "test-native": {
           "builder": "@angular-devkit/build-angular:jest",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "tsconfig.spec.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-builders/jest:run",
           "options": {
             "polyfills": [
               "zone.js",

@@ -7,7 +7,7 @@ import {RouterLink} from "@angular/router";
   standalone: true,
   imports: [CommonModule, RouterLink],
   templateUrl: './hello.component.html',
-  styles: `
+  styles: [`
   nav {
     margin-top: 1rem;
 
@@ -22,7 +22,7 @@ import {RouterLink} from "@angular/router";
       margin-right: 1rem;
     }
   }
-  `,
+  `],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HelloComponent {
