@@ -1,9 +1,23 @@
 <h1>Testbed: Jest Basics</h1>
 
+<h2>Experimentell</h2>
+
 <ul>
   <li><strong>Installation 1:</strong> npm i -D &commat;types/jest jest jest-environment-jsdom</li>
   <li><strong>Installation 2:</strong> "karma" durch "jest" in angular.json ersetzen: `&commat;angular-devkit/build-angular:jest`</li>
-  <li><strong>Installation 3:</strong> Karma und Jasmine deinstallieren: npm uninstall &commat;types/jasmine jasmine-core karma karma-chrome-launcher karma-coverage karma-jasmine karma-jasmine-html-reporter</li>
+  <li><strong>Installation 3:</strong> "jasmine" durch "jest" in "tsconfig.spec.json" ersetzen und "test.ts" aus include Array entfernen.</li>
+  <li><strong>Installation 4:</strong> Karma und Jasmine deinstallieren: npm uninstall &commat;types/jasmine jasmine-core karma karma-chrome-launcher karma-coverage karma-jasmine karma-jasmine-html-reporter</li>
+  <li><strong>Installation 5:</strong> Unnötige Dateien entfernen: `rm ./karma.conf.js ./src/test.ts`</li>
+</ul>
+
+<h2>Alternativ: Angular Builders verwenden</h2>
+
+<ul>
+  <li>Link: https://github.com/just-jeb/angular-builders/tree/master/packages/jest</li>
+  <li><strong>Installation 1:</strong> s. o. Installation 3 + 4</li>
+  <li><strong>Installation 2:</strong> `npm i -D jest &commat;types/jest &commat;angular-builders/jest`</li>
+  <li><strong>Installation 3:</strong> s. o. Installation 3</li>
+  <li><strong>Installation 4:</strong> Builder "karma" durch "&commat;angular-builders/jest:run" in angular.json ersetzen: `&commat;angular-builders/jest:run`</li>
 </ul>
 
 <p>Im Anschluss funktioniert Jest größtenteils wie Karma, nur das Jest deutlich schneller ist, da es Tests parallel ausführen kann und kein echten Webbrowser benötigt.</p>
