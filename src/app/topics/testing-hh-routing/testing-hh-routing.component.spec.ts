@@ -61,4 +61,8 @@ describe('TestingHhRoutingComponent', () => {
     fireEvent.click(screen.getByTestId('link-router-navigate'));
     expect(spy).toHaveBeenCalledWith(['/', 'link-to-another-page']);
   });
+
+  it('should have href', () => {
+    expect((screen.getByTestId('link-router-dynamic') as HTMLAnchorElement).href).toEqual('http://localhost/dynamic/route?dynamic=true');
+  });
 });

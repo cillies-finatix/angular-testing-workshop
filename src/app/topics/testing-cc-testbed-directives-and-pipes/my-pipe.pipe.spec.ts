@@ -4,12 +4,12 @@ import {TestBed} from "@angular/core/testing";
 
 describe('MyPipePipe', () => {
   // Does not work because we're using inject()
-  /*
+  /**
   it('create an instance and test it', () => {
     const pipe = new MyPipePipe();
     expect(pipe.transform('test me')).toEqual('test me piped');
   });
-  */
+  /**/
 
   it('should add piped on transform', async () => {
     // Define a Test Component that uses the pipe.

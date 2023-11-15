@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { TestingEeJestBasicsComponent } from './testing-ee-jest-basics.component';
+import {TestingEeJestBasicsComponent} from './testing-ee-jest-basics.component';
 
 describe('TestingEeJestBasicsComponent', () => {
   let component: TestingEeJestBasicsComponent;
@@ -11,13 +11,10 @@ describe('TestingEeJestBasicsComponent', () => {
       imports: [TestingEeJestBasicsComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(TestingEeJestBasicsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
 });

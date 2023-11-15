@@ -95,9 +95,9 @@ describe('TestingGgMarblesComponent', () => {
 
         // setTimeout oder ähnliches würde theoretisch auch funktionieren, aber
         // so ist es cleaner, da der TestScheduler verwendet wird.
-        cold('-xxx|').subscribe(() => component.updateEventStream());
+        cold('5s xxx|').subscribe(() => component.updateEventStream());
 
-        expectObservable(component.eventStream$).toBe('-abc', expected);
+        expectObservable(component.eventStream$).toBe('5s abc', expected);
       });
     });
 

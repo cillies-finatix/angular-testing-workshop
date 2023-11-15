@@ -5,6 +5,6 @@
 <button (click)="hideTestArea.set(!hideTestArea())">@if(hideTestArea()) { Show } @else { Hide } Test Area</button>
 
 <section class="test-area" *ngIf="!hideTestArea()">
-  <p appMyDirective>{{ 'test-me' | myPipe }}</p>
+  <p appMyDirective [attr.data-text]="'test-me' | myPipe">{{ 'test-me' | myPipe }}</p>
 </section>
 

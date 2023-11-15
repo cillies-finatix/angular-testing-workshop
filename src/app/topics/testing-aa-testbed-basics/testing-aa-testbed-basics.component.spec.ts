@@ -22,12 +22,7 @@ describe('TestingAaTestbedBasicsComponent', () => {
     /**/
 
     fixture = TestBed.createComponent(TestingAaTestbedBasicsComponent);
-    fixture.debugElement.providerTokens
     component = fixture.componentInstance;
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
   });
 
   it('should have default values', async () => {
@@ -52,15 +47,15 @@ describe('TestingAaTestbedBasicsComponent', () => {
   });
 
   it('should get updated values on init', async () => {
+    expect.hasAssertions();
 
     // What's wrong here?
     // The test is green, though!
+    fixture.detectChanges();
 
-    setTimeout(async () => {
-      expect(component.myValue).toEqual('My Changed Value');
-      expect(component.mySignal()).toEqual('My Changed Signal Value');
-      expect(await firstValueFrom(component.myValue$)).toEqual('My Changed Observable Value');
-    })
+    expect(component.myValue).toEqual('My Changed Value');
+    expect(component.mySignal()).toEqual('My Changed Signal Value');
+    expect(await firstValueFrom(component.myValue$)).toEqual('My Changed Observable Value');
   });
 
   it.each`

@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
 @Component({
   selector: 'app-testing-ee-jest-basics',
@@ -10,5 +10,4 @@ import { CommonModule } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TestingEeJestBasicsComponent {
-
 }
